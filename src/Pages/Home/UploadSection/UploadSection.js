@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const UploadSection = () => {
     return (
-        <form className='bg-white mt-8 md:ml-28 lg:ml-12 mr-12  lg:mr-0 shadow-xl rounded w-full lg:w-[800px]'>
+        <form className='bg-white mt-8 md:ml-24 lg:ml-12 mr-12  lg:mr-0 shadow-xl rounded w-full lg:w-[800px]'>
             {/* <div className='pt-12'>
                 <input type="datetime-local" />
             </div> */}

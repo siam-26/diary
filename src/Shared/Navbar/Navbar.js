@@ -2,6 +2,7 @@ import React from 'react';
 import { FaBookReader } from 'react-icons/fa';
 import { BiPhotoAlbum } from 'react-icons/bi';
 import { GoFileMedia } from 'react-icons/go';
+import { Link } from 'react-router-dom';
 
 
 
@@ -25,17 +26,17 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     Name</a></li>
-                                <li><a className='font-bold'><GoFileMedia className='text-primary w-8 h-8' /> Media</a></li>
-                                <li><a className='font-bold'><BiPhotoAlbum className='text-primary w-8 h-8' /> My Album</a></li>
+                                <li><Link to='/media' className='font-bold'><GoFileMedia className='text-primary w-8 h-8' /> Media</Link></li>
+                                <li><Link to='/myAlbum' className='font-bold'><BiPhotoAlbum className='text-primary w-8 h-8' /> My Album</Link></li>
                                 <li><a className='font-bold'><FaBookReader className='text-primary w-8 h-8' /> About</a></li>
                             </ul>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl pl-6">TalkDiary</a>
+                    <Link className="btn btn-ghost normal-case text-xl pl-6" to='/'>TalkDiary</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Media</a></li>
+                        <li><Link to='/media' className=''> Media</Link></li>
                         <li><a>About</a></li>
                     </ul>
                 </div>

@@ -6,10 +6,10 @@ import { FcLike } from 'react-icons/fc';
 const PopularPost = () => {
     return (
         <div>
-            <div className="card w-full lg:w-[800px] lg:ml-12
-            mt-12 mb-12 bg-base-100 shadow-xl">
 
-                <div className='flex pt-5 pl-5'>
+            <div className="card w-full md:lg:w-[800px] lg:w-[800px] md:ml-24 lg:ml-12 mt-12 mb-12 bg-base-100 shadow-xl">
+
+                <div className='flex pt-5 pl-12'>
                     <div className="avatar">
                         <div className="w-12 rounded-full">
                             <img src="https://placeimg.com/192/192/people" alt='' />
@@ -46,10 +46,9 @@ const PopularPost = () => {
 
             </div>
 
-            <div className="card w-full lg:w-[800px] lg:ml-12
-            mt-12 mb-12 bg-base-100 shadow-xl">
+            <div className="card w-full md:lg:w-[800px] lg:w-[800px] md:ml-24 lg:ml-12 mt-12 mb-12 bg-base-100 shadow-xl">
 
-                <div className='flex pt-5 pl-5'>
+                <div className='flex pt-5 pl-12'>
                     <div className="avatar">
                         <div className="w-12 rounded-full">
                             <img src="https://placeimg.com/192/192/people" alt='' />
@@ -86,10 +85,9 @@ const PopularPost = () => {
 
             </div>
 
-            <div className="card w-full lg:w-[800px] lg:ml-12
-            mt-12 mb-12 bg-base-100 shadow-xl">
+            <div className="card w-full md:lg:w-[800px] lg:w-[800px] md:ml-24 lg:ml-12 mt-12 mb-12 bg-base-100 shadow-xl">
 
-                <div className='flex pt-5 pl-5'>
+                <div className='flex pt-5 pl-12'>
                     <div className="avatar">
                         <div className="w-12 rounded-full">
                             <img src="https://placeimg.com/192/192/people" alt='' />

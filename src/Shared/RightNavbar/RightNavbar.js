@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaBookReader } from 'react-icons/fa';
 import { BiPhotoAlbum } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const RightNavbar = () => {
     return (
@@ -22,7 +23,7 @@ const RightNavbar = () => {
                                 </div>
                             </div>
                             Name</a></li>
-                        <li><a className='font-bold'><BiPhotoAlbum className='text-primary w-8 h-8' /> My Album</a></li>
+                        <li><Link to='/myAlbum' className='font-bold'><BiPhotoAlbum className='text-primary w-8 h-8' /> My Album</Link></li>
                         <li><a className='font-bold'><FaBookReader className='text-primary w-8 h-8' /> About</a></li>
                     </ul>
 
