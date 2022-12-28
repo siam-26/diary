@@ -7,8 +7,13 @@ const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <RightNavbar></RightNavbar>
-            <Outlet></Outlet>
+            <div className='flex bg-secondary'>
+                <RightNavbar></RightNavbar>
+                <Outlet></Outlet>
+
+            </div>
+
+
         </div>
     );
 };
