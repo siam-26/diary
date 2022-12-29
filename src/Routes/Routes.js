@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import Media from "../Pages/Media/Media";
 import MyAlbums from "../Pages/MyAlbums/MyAlbums";
 import Register from "../Pages/Register/Register";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -17,11 +18,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/media',
-                element: <Media></Media>
+                element: <PrivateRoute><Media></Media></PrivateRoute>
             },
             {
                 path: '/myAlbum',
-                element: <MyAlbums></MyAlbums>
+                element: <PrivateRoute><MyAlbums></MyAlbums></PrivateRoute>
             }
         ],
 

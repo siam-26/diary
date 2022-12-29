@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HiOutlinePhoto } from 'react-icons/hi2';
 import { BiPhotoAlbum } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/Authprovider';
 
 const UploadSection = () => {
+    const { user } = useContext(AuthContext);
     return (
         <form className='bg-white mt-8 md:ml-24 lg:ml-12 mr-12  lg:mr-0 shadow-xl rounded w-full lg:w-[800px]'>
             {/* <div className='pt-12'>
@@ -34,9 +36,16 @@ const UploadSection = () => {
 
                 </div>
 
-                <div className='mt-1'>
-                    <button className="btn btn-xs btn-primary text-white ml-16">Submit</button>
-                </div>
+                {
+                    user?.email ?
+                        <div className='mt-1'>
+                            <button className="btn btn-xs btn-primary text-white ml-16" >Submit</button>
+                        </div>
+                        :
+                        <div className='mt-1'>
+                            <button className="btn btn-xs btn-primary text-white ml-16" disabled>Submit</button>
+                        </div>
+                }
             </div>
         </form>
     );

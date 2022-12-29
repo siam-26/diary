@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaBookReader } from 'react-icons/fa';
 import { BiPhotoAlbum } from 'react-icons/bi';
 import { GoFileMedia } from 'react-icons/go';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/Authprovider';
+import { CgProfile } from 'react-icons/cg';
 
 
 
 const Navbar = () => {
+    const { user, logOut, loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <p>loading...</p>
+    }
+    //logOut
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     return (
         <div className=''>
             <div className="navbar ">
@@ -40,9 +57,32 @@ const Navbar = () => {
                         <li><a>About</a></li>
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link className='btn' to='/login'>login</Link>
-                </div>
+
+                {
+                    user?.email ?
+                        <div className="navbar-end">
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} >
+                                    {
+                                        user?.photoURL ?
+                                            <img className='w-14 rounded-full' src="https://placeimg.com/192/192/people" title={user.displayName} alt='' />
+                                            :
+                                            <CgProfile className='w-10 h-14' title={user.displayName} />
+                                    }
+                                </label>
+                                <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-neutral rounded-box w-52">
+
+                                    <li><Link to='/' onClick={handleLogOut} >log out</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+                        :
+                        <div className="navbar-end">
+                            <Link className='btn' to='/login'>login</Link>
+                        </div>
+                }
+
+
             </div>
         </div>
     );
