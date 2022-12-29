@@ -65,7 +65,7 @@ const Navbar = () => {
                                 <label tabIndex={0} >
                                     {
                                         user?.photoURL ?
-                                            <img className='w-14 rounded-full' src="https://placeimg.com/192/192/people" title={user.displayName} alt='' />
+                                            <img className='w-12 rounded-full' src="https://placeimg.com/192/192/people" title={user.displayName} alt='' />
                                             :
                                             <CgProfile className='w-10 h-14' title={user.displayName} />
                                     }
