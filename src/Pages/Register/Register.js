@@ -22,11 +22,37 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 handleUserUpdateProfile(data.name, data.photo);
+                newUserInfo(data.name, data.email, data.university, data.address);
                 alert('successfully signup');
                 navigate('/');
             })
             .catch(error => {
                 const err = setError(error.message);
+            })
+    }
+
+    //new user info
+    const newUserInfo = (name, email, university, address) => {
+        const newUser = {
+            name,
+            email,
+            university,
+            address
+        }
+        fetch('https://y-mu-umber.vercel.app/newUser', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(newUser),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+            })
+            .catch(error => {
+                console.log(error);
             })
     }
 
@@ -80,6 +106,20 @@ const Register = () => {
                                     <span className="label-text">Photo</span>
                                 </label>
                                 <input {...register("photo")} type="text" placeholder="your photo" className="input input-bordered" />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">University</span>
+                                </label>
+                                <input {...register("university")} type="text" placeholder="your current institute" className="input input-bordered" />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Address</span>
+                                </label>
+                                <input {...register("address")} type="text" placeholder="your current address" className="input input-bordered" />
                             </div>
 
                             <div className="form-control">

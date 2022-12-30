@@ -43,9 +43,11 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     Name</a></li>
+                                <li><Link to='/' className='font-bold'><GoFileMedia className='text-primary w-8 h-8' /> Home</Link></li>
                                 <li><Link to='/media' className='font-bold'><GoFileMedia className='text-primary w-8 h-8' /> Media</Link></li>
                                 <li><Link to='/myAlbum' className='font-bold'><BiPhotoAlbum className='text-primary w-8 h-8' /> My Album</Link></li>
-                                <li><a className='font-bold'><FaBookReader className='text-primary w-8 h-8' /> About</a></li>
+
+                                <li><Link className='font-bold' to='/about'><FaBookReader className='text-primary w-8 h-8' />About</Link></li>
                             </ul>
                         </ul>
                     </div>
@@ -53,8 +55,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
+                        <li><Link to='/' className=''> Home</Link></li>
                         <li><Link to='/media' className=''> Media</Link></li>
-                        <li><a>About</a></li>
+                        <li><Link className='' to='/about'>About</Link></li>
                     </ul>
                 </div>
 
@@ -65,7 +68,7 @@ const Navbar = () => {
                                 <label tabIndex={0} >
                                     {
                                         user?.photoURL ?
-                                            <img className='w-12 rounded-full' src="https://placeimg.com/192/192/people" title={user.displayName} alt='' />
+                                            <img className='w-12 h-12 rounded-full' src={user?.photoURL} title={user.displayName} alt='' />
                                             :
                                             <CgProfile className='w-10 h-14' title={user.displayName} />
                                     }
@@ -78,7 +81,7 @@ const Navbar = () => {
                         </div>
                         :
                         <div className="navbar-end">
-                            <Link className='btn' to='/login'>login</Link>
+                            <Link className='btn btn-primary font-semibold text-white' to='/login'>login</Link>
                         </div>
                 }
 

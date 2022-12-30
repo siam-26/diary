@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaBookReader } from 'react-icons/fa';
 import { BiPhotoAlbum } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/Authprovider';
 
 const RightNavbar = () => {
+    const { user } = useContext(AuthContext);
     return (
         <div className='hidden lg:block'>
             <div className="drawer drawer-mobile">
@@ -16,15 +18,15 @@ const RightNavbar = () => {
 
                     <ul className="menu p-4 w-80 bg-secondary text-base-content">
                         {/* <!-- Sidebar content here --> */}
-                        <li><a className='font-bold'>
+                        <li><Link to='/about' className='font-bold'>
                             <div className="avatar">
                                 <div className="w-8 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" alt='' />
+                                    <img src={user?.photoURL} alt='' />
                                 </div>
                             </div>
-                            Name</a></li>
+                            Name</Link></li>
                         <li><Link to='/myAlbum' className='font-bold'><BiPhotoAlbum className='text-primary w-8 h-8' /> My Album</Link></li>
-                        <li><a className='font-bold'><FaBookReader className='text-primary w-8 h-8' /> About</a></li>
+                        <li><Link to='/about' className='font-bold'><FaBookReader className='text-primary w-8 h-8' /> About</Link></li>
                     </ul>
 
                 </div>
